@@ -1,5 +1,7 @@
 package com.indracompany.treinamento.model.service;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -27,7 +29,10 @@ public class ClienteService extends GenericCrudService<Cliente, Long, ClienteRep
 	}
 	public Cliente buscarClientePorEmail(String email) {
 		
-		return clienteRepository.findByEmail(email);
+		Optional<Cliente> cliente = Optional.ofNullable(clienteRepository.findByEmail(email));
+
+		return cliente.orElseThrow(() -> new AplicacaoException(ExceptionValidacoes.ERRO_EMAIL_NAO_ENCONTRADO));
+
 	}
 	
 	
