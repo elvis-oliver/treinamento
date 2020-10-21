@@ -1,6 +1,7 @@
 package com.indracompany.treinamento.model.entity;
 
 import java.util.Date;
+
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -14,10 +15,13 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
 
 import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
+
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.Data;
@@ -36,12 +40,15 @@ public class Cliente extends GenericEntity<Long> {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
+	
 	@Column(name = "nome")
 	private String nome;
 	
+
 	@Column(name = "cpf")
 	private String cpf;
 	
+
 	@Column(name = "email")
 	private String email;
 	
