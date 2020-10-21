@@ -34,7 +34,7 @@ public class ClienteService extends GenericCrudService<Cliente, Long, ClienteRep
 
 	public List<Cliente> buscarClientePorNome(String nome) {
 		
-     List<Cliente> list = clienteRepository.findByNomeStartsWith(nome); 
+		List<Cliente> list = clienteRepository.findByNomeStartsWith(nome); 
 		
 		
 		if(list == null || list.isEmpty()) {
