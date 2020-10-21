@@ -29,5 +29,22 @@ public class ClienteRest extends GenericCrudRest<Cliente, Long, ClienteService>{
 		Cliente retorno = clienteService.buscarClientePorCpf(cpf);
 		return  new ResponseEntity<>(retorno, HttpStatus.OK);
 	}
-
+	
+	@RequestMapping(value = "/buscar-por-nome/{nome}", method = RequestMethod.GET, produces = { MediaType.APPLICATION_JSON_VALUE})
+	public @ResponseBody ResponseEntity<Cliente> buscarClientePorNome (final @PathVariable String nome) {
+		Cliente retorno = clienteService.buscarClientePorNome(nome);
+		return new ResponseEntity<>(retorno, HttpStatus.OK);
+	}
+	
+	@RequestMapping(value = "/buscar-por-email/{email}/", method = RequestMethod.GET, produces = { MediaType.APPLICATION_JSON_VALUE})
+	public @ResponseBody ResponseEntity<Cliente> buscarClientePorEmail(final @PathVariable String email) {
+		Cliente retorno = clienteService.buscarClientePorEmail(email);
+		return new ResponseEntity<>(retorno, HttpStatus.OK);
+	}
+	
+	@RequestMapping(value = "/buscar-por-observacoes/{observacoes}", method = RequestMethod.GET, produces = { MediaType.APPLICATION_JSON_VALUE})
+	public @ResponseBody ResponseEntity<Cliente> buscarClientePorObservacoes(final @PathVariable String observacoes) {
+		Cliente retorno = clienteService.buscarClientePorObservacoes(observacoes);
+		return  new ResponseEntity<>(retorno, HttpStatus.OK);
+	}
 }
