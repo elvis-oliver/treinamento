@@ -1,5 +1,8 @@
 package com.indracompany.treinamento.model.service;
 
+
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -25,6 +28,14 @@ public class ClienteService extends GenericCrudService<Cliente, Long, ClienteRep
 	private boolean cpfEhValido(String cpf) {
 		return CpfUtil.validaCPF(cpf);
 	}
-	
+
+	public List<Cliente> buscarClientePorNome(String nome) {
+		
+		List<Cliente> lst = clienteRepository.findByNomeContaining(nome);
+		if (lst.isEmpty()) {
+			throw new AplicacaoException(ExceptionValidacoes.ALERTA_NENHUM_REGISTRO_ENCONTRADO);			
+		}
+		return clienteRepository.findByNomeContaining(nome);
+	}
 
 }
