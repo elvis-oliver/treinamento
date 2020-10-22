@@ -13,6 +13,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.ColumnDefault;
@@ -44,6 +45,7 @@ public class Cliente extends GenericEntity<Long> {
 	
 	@Column(name = "email")
 	private String email;
+	
 	
 	@Column(name = "ativo")
 	private boolean ativo;

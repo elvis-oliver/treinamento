@@ -19,6 +19,8 @@ public enum ExceptionValidacoes implements AplicacaoExceptionValidacoes {
   ERRO_ACESSO_SISTEMA("msg.app.erro.acesso.sistema", null, AplicacaoExceptionValidacoes.SEVERIDADE_ERRO),
   ERRO_CAMPO_OBRIGATORIO("msg.app.erro.campo.obrigatorio", null, AplicacaoExceptionValidacoes.SEVERIDADE_ERRO),
   ERRO_EXCLUSAO_GENERICO("msg.app.erro.exclusao.generico", null, AplicacaoExceptionValidacoes.SEVERIDADE_ERRO),
+  ERRO_EMAIL_INVALIDO("msg.app.erro.exclusao.generico", null, AplicacaoExceptionValidacoes.SEVERIDADE_ERRO),
+  ERRO_CPF_INVALIDO("msg.app.erro.exclusao.generico", null, AplicacaoExceptionValidacoes.SEVERIDADE_ERRO),ERRO_NOME_INVÁLIDO("msg.app.erro.exclusao.generico", null, AplicacaoExceptionValidacoes.SEVERIDADE_ERRO),
   ERRO_OBJETO_NAO_ENCONTRADO("msg.app.erro.objeto.nao.encontrado", null, AplicacaoExceptionValidacoes.SEVERIDADE_ERRO),
   ERRO_VALIDACAO("msg.app.erro.validacao", null, AplicacaoExceptionValidacoes.SEVERIDADE_ERRO),
   ERRO_SERIALIZAR_JSON("msg.app.erro.serializar.json", null, AplicacaoExceptionValidacoes.SEVERIDADE_ERRO),
