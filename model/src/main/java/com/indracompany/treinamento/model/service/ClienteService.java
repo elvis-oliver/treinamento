@@ -25,6 +25,8 @@ public class ClienteService extends GenericCrudService<Cliente, Long, ClienteRep
 	private boolean cpfEhValido(String cpf) {
 		return CpfUtil.validaCPF(cpf);
 	}
-	
+	public Cliente buscarClientePorNome(String nome) {
+		return clienteRepository.findByNome(nome);
+	}	
 
 }
